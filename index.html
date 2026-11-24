@@ -1,35 +1,207 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SayShadow – Support</title>
-<style>
-:root{color-scheme:light dark;--fg:#1d1d1f;--muted:#6e6e73;--bg:#fff;--card:#f5f5f7;--accent:#2f6bf6}
-@media (prefers-color-scheme:dark){:root{--fg:#f5f5f7;--muted:#a1a1a6;--bg:#1c1c1e;--card:#2c2c2e;--accent:#5b8cff}}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif}
-main{max-width:720px;margin:0 auto;padding:48px 20px}
-h1{font-size:32px;margin:0 0 4px}h2{font-size:20px;margin:36px 0 8px}p,li{color:var(--fg)}.muted{color:var(--muted)}
-.card{background:var(--card);border-radius:14px;padding:16px 20px;margin:12px 0}a{color:var(--accent)}
-footer{margin-top:48px;font-size:14px;color:var(--muted)}
-</style></head>
-<body><main>
-<h1>SayShadow</h1>
-<p class="muted">Shadow any sentence your Mac plays. Version 0.1 for macOS 26 or later.</p>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SayShadow – Shadow any sentence your Mac plays</title>
+<meta name="description" content="SayShadow for Mac: replay a line from any video or podcast, say it yourself and see where your melody differs from the speaker's. Save it to Anki with one key. Free, on-device, no account.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://florainx.github.io/sayshadow/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%233b8bff'/%3E%3Cstop offset='1' stop-color='%231957e6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7.5' fill='url(%23g)'/%3E%3Cg fill='%23fff'%3E%3Crect x='6.3' y='13' width='2.6' height='6' rx='1.3'/%3E%3Crect x='10.5' y='9' width='2.6' height='14' rx='1.3'/%3E%3Crect x='14.7' y='6' width='2.6' height='20' rx='1.3'/%3E%3Crect x='18.9' y='10' width='2.6' height='12' rx='1.3'/%3E%3Crect x='23.1' y='13' width='2.6' height='6' rx='1.3'/%3E%3C/g%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SayShadow">
+<meta property="og:title" content="SayShadow – Shadow any sentence your Mac plays">
+<meta property="og:description" content="Replay a line from any video or podcast, say it yourself and see where your melody differs from the speaker's. Save it to Anki with one key.">
+<meta property="og:url" content="https://florainx.github.io/sayshadow/">
+<meta property="og:image" content="https://florainx.github.io/sayshadow/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="750">
+<meta property="og:image:alt" content="The SayShadow window writing along with a video played in Chrome.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
-<h2>Getting started</h2>
-<div class="card"><ol>
-<li>Play a video, podcast or course with speech in any app.</li>
-<li>In SayShadow, pick that app in the menu at the top left of the window.</li>
-<li>After a sentence you like, press <b>R</b>. Listen, then say it yourself.</li>
-<li>Press <b>E</b> to save the sentence as an Anki flashcard.</li>
-</ol></div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="SayShadow home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="logo-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b8bff"/><stop offset="1" stop-color="#1957e6"/></linearGradient></defs><rect width="32" height="32" rx="7.5" fill="url(#logo-g)"/><g fill="#fff"><rect x="6.3" y="13" width="2.6" height="6" rx="1.3"/><rect x="10.5" y="9" width="2.6" height="14" rx="1.3"/><rect x="14.7" y="6" width="2.6" height="20" rx="1.3"/><rect x="18.9" y="10" width="2.6" height="12" rx="1.3"/><rect x="23.1" y="13" width="2.6" height="6" rx="1.3"/></g></svg>
+      SayShadow
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#requirements">Requirements</a>
+      <a class="keep" href="#support">Support</a>
+    </nav>
+  </div>
+</header>
 
-<h2>Common questions</h2>
-<div class="card"><b>No words appear.</b><br>Check that the app you picked is playing sound. Allow SayShadow under <i>System Settings › Privacy &amp; Security › System Audio Recording</i>. The first time, macOS downloads speech recognition for the language; this can take a minute.</div>
-<div class="card"><b>My attempt is not recorded.</b><br>Allow SayShadow under <i>Privacy &amp; Security › Microphone</i>, and check that a microphone is connected.</div>
-<div class="card"><b>Where are my cards?</b><br>In the folder you chose when saving the first card, as one Anki deck file (.apkg). Double-click it to import it into Anki. To change the folder, use <i>Choose Deck Folder…</i> in the menu bar icon. If Anki is open with the AnkiConnect add-on, cards go straight into Anki.</div>
-<div class="card"><b>What does the score mean?</b><br>SayShadow compares the melody (pitch over time) of your attempt with the speaker's, after lining both up in time. It does not rate individual sounds.</div>
+<main id="main">
+  <div class="hero wrap">
+    <p class="eyebrow">SayShadow for Mac</p>
+    <h1>Shadow any sentence your Mac plays.</h1>
+    <p class="lede">Replay a line from any video or podcast, say it yourself, and see where your melody differs from the speaker’s. Save it to Anki with one key.</p>
+    <div class="hero-meta">
+      <span class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        Coming soon to the Mac App Store
+      </span>
+      <a href="#how">See how it works</a>
+    </div>
+    <ul class="facts" aria-label="At a glance">
+      <li>Free</li>
+      <li>macOS 26 or later</li>
+      <li>Runs on your Mac</li>
+      <li>No account</li>
+    </ul>
+  </div>
 
-<h2>Contact</h2>
-<p>Email: <a href="mailto:hello@switchfile.io">hello@switchfile.io</a>. We usually answer within two working days.</p>
+  <section id="how" class="alt" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="how-title">How it works</h2>
+        <p>Built for shadowing: no subtitles needed, no copying links, no switching apps.</p>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <div class="step-text">
+            <span class="step-num" aria-hidden="true">1</span>
+            <h3>Pick the app that’s talking.</h3>
+            <p>Play a video, podcast or online course, then pick that app in the menu at the top left of the SayShadow window. SayShadow listens to that app only and writes along as people speak.</p>
+          </div>
+          <figure class="shot">
+            <div class="frame"><img src="assets/win-transcript.webp" width="1000" height="1272" alt="SayShadow window with Google Chrome selected as the source, showing a live transcript. The current sentence reads: It’s really, in NASA’s interest, to have two partners that can fly spaceships, and the more people flying in space."></div>
+            <figcaption>Speaker audio: NASA video, played in Chrome.</figcaption>
+          </figure>
+        </li>
+        <li class="step">
+          <div class="step-text">
+            <span class="step-num" aria-hidden="true">2</span>
+            <h3>Press <kbd>R</kbd> and say it yourself.</h3>
+            <p>R replays the sentence. Repeat it, and SayShadow draws your melody next to the speaker’s and marks the word where they <strong>differ most</strong>. Press R again to try once more.</p>
+          </div>
+          <figure class="shot">
+            <div class="frame"><img src="assets/win-compare.webp" width="1000" height="1272" loading="lazy" decoding="async" alt="Compare view: the speaker’s pitch curve in blue and the learner’s in orange, drawn on top of each other. The word NASA’s is highlighted as the biggest difference."></div>
+            <figcaption>Speaker audio: NASA video, played in Chrome. Learner: synthetic voice (simulated).</figcaption>
+          </figure>
+        </li>
+        <li class="step">
+          <div class="step-text">
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3>Press <kbd>E</kbd> to keep it.</h3>
+            <p>The sentence becomes an Anki flashcard with the original audio, your attempt and both curves. Cards are saved as an Anki deck file (.apkg) in a folder you choose, or go straight into Anki with the AnkiConnect add-on.</p>
+          </div>
+          <figure class="shot">
+            <div class="frame"><img src="assets/win-saved.webp" width="1000" height="688" loading="lazy" decoding="async" alt="Lower part of the compare view after pressing E: both pitch curves, the keys Again and Save to Anki, and the status line Saved to Anki, 1 card."></div>
+            <figcaption>Speaker audio: NASA video, played in Chrome. Learner: synthetic voice (simulated).</figcaption>
+          </figure>
+        </li>
+      </ol>
+      <p class="tip">The window floats next to your video. <kbd>R</kbd> and <kbd>E</kbd> also work from any app with <span class="nowrap">Option-Command</span>.</p>
+    </div>
+  </section>
 
-<footer><a href="privacy.html">Privacy Policy</a> · <a href="imprint.html">Imprint / Impressum</a> · © 2026 Aura UG (haftungsbeschränkt)</footer>
-</main></body></html>
+  <section id="privacy" aria-labelledby="privacy-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="privacy-title">Private by design</h2>
+        <p>What you hear, say and save stays on your Mac.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg>
+          <h3>On-device speech recognition</h3>
+          <p>Transcription uses Apple’s on-device speech recognition on your Mac.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10.5a4 4 0 0 0 .5-7.97A6 6 0 0 0 6.2 10.1 4 4 0 0 0 7 18z"/><path d="M4 4l16 16"/></svg>
+          <h3>Nothing uploaded</h3>
+          <p>Audio is kept in memory for the last three minutes only. Nothing is uploaded.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path d="M4 4l16 16"/></svg>
+          <h3>No account, no tracking</h3>
+          <p>No sign-in, no analytics, no advertising, no third-party SDKs.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <h3>Your cards, your folder</h3>
+          <p>Cards go into a folder you choose, or into Anki running on the same Mac.</p>
+        </div>
+      </div>
+      <p class="more"><a href="privacy.html">Read the privacy policy</a></p>
+    </div>
+  </section>
+
+  <section id="requirements" class="alt" aria-labelledby="req-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="req-title">What you need</h2>
+      </div>
+      <dl class="specs">
+        <div><dt>Mac</dt><dd>macOS 26 or later.</dd></div>
+        <div><dt>Permissions</dt><dd>System Audio Recording, to hear the app you pick, and Microphone, to record your attempt. SayShadow explains both on first launch.</dd></div>
+        <div><dt>Language</dt><dd>Version 0.1 supports English.</dd></div>
+        <div><dt>Anki</dt><dd>Optional, to study your cards. Free at <a href="https://apps.ankiweb.net/">apps.ankiweb.net</a>.</dd></div>
+        <div><dt>Price</dt><dd>Free.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="support" aria-labelledby="support-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="support-title">Support</h2>
+        <p>Questions, problems or ideas? Write to us.</p>
+      </div>
+      <div class="contact">
+        <a class="button" href="mailto:hello@switchfile.io?subject=SayShadow">hello@switchfile.io</a>
+        <p>We usually answer within two working days.</p>
+      </div>
+      <h2 class="visually-hidden" id="faq-title">Common questions</h2>
+      <div class="faq" role="list" aria-labelledby="faq-title">
+        <div class="card" role="listitem">
+          <h3>No words appear.</h3>
+          <p>Check that the app you picked is playing sound. Allow SayShadow under <i>System Settings › Privacy &amp; Security › System Audio Recording</i>. The first time, macOS downloads speech recognition for the language; this can take a minute.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>My attempt is not recorded.</h3>
+          <p>Allow SayShadow under <i>Privacy &amp; Security › Microphone</i>, and check that a microphone is connected.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Where are my cards?</h3>
+          <p>In the folder you chose when saving the first card, as one Anki deck file (.apkg). Double-click it to import it into Anki. To change the folder, use <i>Choose Deck Folder…</i> in the menu bar icon. If Anki is open with the AnkiConnect add-on, cards go straight into Anki.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>What does the comparison measure?</h3>
+          <p>SayShadow compares the melody (pitch over time) of your attempt with the speaker’s, after lining both up in time, and marks the word where they differ most. It measures pitch, not the pronunciation of individual sounds.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Which languages are supported?</h3>
+          <p>Version 0.1 supports English.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Does SayShadow send my audio anywhere?</h3>
+          <p>No. Speech recognition runs on your Mac, and nothing you hear, say or save is uploaded. macOS may download the speech model for a language once from Apple.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="imprint.html">Imprint / Impressum</a>
+      <a href="#support">Support</a>
+    </nav>
+    <p>© 2026 Aura UG (haftungsbeschränkt)</p>
+  </div>
+</footer>
+</body>
+</html>
